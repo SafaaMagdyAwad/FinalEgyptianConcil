@@ -1,0 +1,10 @@
+@extends('public.layout.main')
+@section('content')
+    @include('public.includes.home')
+    @include('public.includes.index')
+    @include('public.includes.topics')
+    @include('public.includes.how_it_works')
+    @include('public.includes.FAQs')
+    @include('public.includes.testimonials')
+    @include('public.includes.contact')
+@endsection
