@@ -15,7 +15,7 @@
           <ul class="navbar-nav">
             <li class="nav-item dropdown dropdown-center user-dropdown">
               <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="true">
-                <img class="img-xs rounded-circle" src="assests/images/avatar-default.svg" alt="Profile image" />
+                <img class="img-xs rounded-circle" src="{{ asset('assets/admin/images/avatar-default.svg') }}" alt="Profile image" />
               </a>
               <div class="dropdown-menu dropdown-center navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
