@@ -21,7 +21,7 @@ Route::get('topics-detail',[PublicController::class,'topicsDetail'])->name('topi
 
 
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('verified')->group(function () {
     Route::resource('category',CategoryController::class)->except(['show']);
     Route::prefix('message')->name('message')->group(function () {
         Route::controller(MessageController::class)->group(function () {
@@ -35,3 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('testimonial',TestimonialController::class);
 });
 
+
+Auth::routes(['verify'=>true]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('verified')->name('home');
