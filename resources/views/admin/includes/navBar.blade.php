@@ -12,11 +12,11 @@
               USERS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="add_user.html">Add user</a></li>
+              <li><a class="dropdown-item" href="{{ route('user.create') }}">Add user</a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="users.html">All users</a></li>
+              <li><a class="dropdown-item" href="{{ route('user.index') }}">All users</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -25,11 +25,11 @@
               TOPICS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="add_topic.html">Add topic</a></li>
+              <li><a class="dropdown-item" href="{{ route('topic.create') }}">Add topic</a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="topics.html">All topics</a></li>
+              <li><a class="dropdown-item" href="{{ route('topic.index') }}">All topics</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -38,11 +38,11 @@
               CATEGORIES
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="add_category.html">Add category</a></li>
+              <li><a class="dropdown-item" href="{{ route('category.create') }}">Add category</a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="categories.html">All categories</a></li>
+              <li><a class="dropdown-item" href="{{ route('category.index') }}">All categories</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -51,14 +51,14 @@
               TESTIMONIALS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="add_testimonial.html">Add testimonial</a></li>
+              <li><a class="dropdown-item" href="{{ route('testimonial.create') }}">Add testimonial</a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="testimonials.html">All testimonials</a></li>
+              <li><a class="dropdown-item" href="{{ route('testimonial.index') }}">All testimonials</a></li>
             </ul>
           </li>
-          <li><a class="nav-item nav-link" href="messages.html">MESSAGES</a></li>
+          <li><a class="nav-item nav-link" href="{{ route('message.index') }}">MESSAGES</a></li>
         </ul>
       </div>
     </div>

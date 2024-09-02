@@ -19,7 +19,7 @@
               </a>
               <div class="dropdown-menu dropdown-center navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="assests/images/avatar-default.svg" alt="Profile image"
+                  <img class="img-md rounded-circle" src="{{ asset('assets/admin/images/avatar-default.svg') }}" alt="Profile image"
                     width="80" height="80" />
                   <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
                   <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>

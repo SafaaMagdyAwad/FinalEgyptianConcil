@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\MessageController;
+use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\TopicController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +19,19 @@ Route::get('contact',[PublicController::class,'contact'])->name('contact');
 Route::get('topics-detail',[PublicController::class,'topicsDetail'])->name('topicsDetail');
 
 
-Route::resource('category',CategoryController::class);
 
-Route::get('message/index',[MessageController::class,'index'])->name('message.index');
-Route::put('message/{message}/read',[MessageController::class,'read'])->name('message.read');
-Route::delete('message/{message}/destroy',[MessageController::class,'destroy'])->name('message.destroy');
+
+Route::prefix('admin')->group(function () {
+    Route::resource('category',CategoryController::class)->except(['show']);
+    Route::prefix('message')->name('message')->group(function () {
+        Route::controller(MessageController::class)->group(function () {
+            Route::get('index','index')->name('.index');
+            Route::put('{message}/read','read')->name('.read');
+            Route::delete('{message}/destroy','destroy')->name('.destroy');
+        });
+    });
+    Route::resource('user',UserController::class)->except(['show']);
+    Route::resource('topic',TopicController::class);
+    Route::resource('testimonial',TestimonialController::class);
+});
+
