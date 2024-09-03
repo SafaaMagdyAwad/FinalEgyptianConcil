@@ -8,7 +8,6 @@
 
     <main>
 
-        @include('public.includes.navbar')
 
         @yield('content')
 

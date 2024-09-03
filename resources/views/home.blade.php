@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ $user->first_name }}
+                    {{ Auth::user()->first_name }}
                     {{ __('You are logged in!') }}
                 </div>
             </div>
@@ -22,3 +22,8 @@
     </div>
 </div>
 @endsection
+
+
+
+
+

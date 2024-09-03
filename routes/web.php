@@ -15,8 +15,10 @@ Route::get('/', function () {
 Route::get('index',[PublicController::class,'index'])->name('index');
 Route::get('testimonials',[PublicController::class,'testimonials'])->name('testimonials');
 Route::get('topics-listing',[PublicController::class,'topicsListing'])->name('topicsListing');
+Route::get('topics-detail/{id}',[PublicController::class,'topicsDetail'])->name('topicsDetail');
 Route::get('contact',[PublicController::class,'contact'])->name('contact');
-Route::get('topics-detail',[PublicController::class,'topicsDetail'])->name('topicsDetail');
+Route::post('contact',[PublicController::class,'sendContactMessage'])->name('sendContactMessage');
+Route::post('search',[PublicController::class,'search'])->name('search');
 
 
 

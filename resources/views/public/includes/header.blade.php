@@ -7,11 +7,11 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('index') }}">Homepage</a></li>
 
-                        <li class="breadcrumb-item active" aria-current="page">{{ $page }}</li>
+                        <li class="breadcrumb-item active" aria-current="page">@stack('page')</li>
                     </ol>
                 </nav>
 
-                <h2 class="text-white">{{ $page }}</h2>
+                <h2 class="text-white">@stack('page')</h2>
             </div>
 
         </div>

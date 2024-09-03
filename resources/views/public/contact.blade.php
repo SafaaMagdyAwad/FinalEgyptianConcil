@@ -1,5 +1,12 @@
 @extends('public.layout.main')
 @section('content')
-@include('public.includes.header',['page'=>"Contact Form"])
+@push('Links')
+@include('public.includes.pagesLink')
+@endpush
+@include('public.includes.navbar')
+@push('page')
+    Contact Form
+@endpush
+@include('public.includes.header')
 @include('public.includes.contact')
 @endsection
