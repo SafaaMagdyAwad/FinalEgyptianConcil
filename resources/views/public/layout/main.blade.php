@@ -13,7 +13,6 @@
 
 
     </main>
-    @include('public.includes.footer')
     @include('public.includes.script')
 
 

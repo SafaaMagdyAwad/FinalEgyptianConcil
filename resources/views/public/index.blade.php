@@ -12,4 +12,9 @@
     @include('public.includes.FAQs'){{-- static --}}
     @include('public.includes.testimonials'){{-- done --}}
     @include('public.includes.indexContact'){{-- static Data --}}
+    @push('links')
+    @include('public.includes.index_footer'){{-- done --}}
+    @endpush
+    @include('public.includes.footer')
+
 @endsection

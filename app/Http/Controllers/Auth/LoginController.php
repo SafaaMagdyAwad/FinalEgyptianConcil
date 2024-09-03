@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 class LoginController extends Controller
 {
     /*
@@ -25,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/topic';
 
     /**
      * Create a new controller instance.
@@ -45,6 +47,10 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
-        return $request->only($this->username(), 'password');
+        $cardinals= $request->only($this->username(), 'password');
+        $cardinals['is_active'] = true;
+        return $cardinals;
     }
+
+
 }

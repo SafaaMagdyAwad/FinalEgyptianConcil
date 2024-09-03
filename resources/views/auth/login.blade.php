@@ -24,28 +24,30 @@
 				<img src="{{ asset('assets/admin/images/rear-view-young-college-student.jpg') }}" alt="">
 			</div>
 			<div class="col-md-7">
-				
+
                 <form method="POST" action="{{ route('login') }}" class="text-center h-100 px-3 d-flex flex-column justify-content-center">
                     @csrf
 					<h3 class="fw-semibold mb-5">LOGIN FORM</h3>
 					<div class="input-group mb-3">
-                        @error('user_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
 						<input type="text" placeholder="Username" class="form-control" name="user_name" value="{{ old('user_name') }}" required>
 						<img src="{{ asset('assets/admin/images/user-svgrepo-com.svg') }}" alt="" class="input-group-text">
 					</div>
+                    @error('user_name')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
 					<div class="input-group mb-3">
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
 						<input type="password" placeholder="Password" class="form-control" name="password" required >
 						<img src="{{ asset('assets/admin/images/password-svgrepo-com.svg') }}" alt="" class="input-group-text">
 					</div>
+                    @error('password')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
 					<button class="btn btn-dark px-5 mb-2">
 						LOGIN
 						<img src="{{ asset('assets/admin/images/arrow-sm-right-svgrepo-com.svg') }}" alt="">

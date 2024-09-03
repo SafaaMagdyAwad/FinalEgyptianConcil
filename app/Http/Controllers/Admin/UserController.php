@@ -39,7 +39,7 @@ class UserController extends Controller
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
         ]);
-        $data['active']=1; //عشان ال admin هو اللي ضافه
+        $data['is_active']=1; //عشان ال admin هو اللي ضافه
 
         $data['email_verified_at'] = Carbon::now();
         // dd($data);
@@ -67,7 +67,7 @@ class UserController extends Controller
             'email' => 'required|string|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:8',
         ]);
-        $data['active'] = isset($request->active);
+        $data['is_active'] = isset($request->is_active);
         $data['password'] =isset($request->password)? Hash::make($request->password):$user->password;
         // dd($data);
         $user->update($data);

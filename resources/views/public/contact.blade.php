@@ -9,4 +9,8 @@
 @endpush
 @include('public.includes.header'){{-- done --}}
 @include('public.includes.contact'){{-- done --}}
+@push('links')
+@include('public.includes.pages_footer'){{-- done --}}
+@endpush
+@include('public.includes.footer')
 @endsection

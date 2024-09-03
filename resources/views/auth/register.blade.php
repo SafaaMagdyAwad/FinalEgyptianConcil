@@ -25,51 +25,56 @@
 				<img src="{{ asset('assets/admin/images/rear-view-young-college-student.jpg') }}" alt="">
 			</div>
 			<div class="col-md-7">
-				
+
                 <form method="POST" action="{{ route('register') }}" class="text-center h-100 px-3 d-flex flex-column justify-content-center">
                     @csrf
 					<h3 class="fw-semibold mb-5">REGISERTATION FORM</h3>
 					<div class="form-group d-flex mb-3">
-                        @error('first_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
 						<input type="text" placeholder="First Name" class="form-control me-2" name="first_name" value="{{ old('first_name') }}" required>
-						@error('last_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                         <input type="text" placeholder="Last Name" class="form-control" name="last_name" value="{{ old('last_name') }}" required>
 					</div>
+                    @error('last_name')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
+                    @error('first_name')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
+
 					<div class="input-group mb-3">
-                        @error('user_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
 						<input type="text" placeholder="Username" class="form-control" name="user_name" value="{{ old('user_name') }}" required>
 						<img src="{{ asset('assets/admin/images/user-svgrepo-com.svg') }}" alt="" class="input-group-text">
 					</div>
+                    @error('user_name')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
 					<div class="input-group  mb-3">
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
 						<input type="text" placeholder="Email Address" class="form-control" name="email" value="{{ old('email') }}" required >
 						<img src="{{ asset('assets/admin/images/email-svgrepo-com.svg') }}" alt="" class="input-group-text">
 					</div>
+                    @error('email')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
 					<div class="input-group mb-3">
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+
 						<input type="password" placeholder="Password" class="form-control" name="password" required >
 						<img src="{{ asset('assets/admin/images/password-svgrepo-com.svg') }}" alt="" class="input-group-text">
 					</div>
+                    @error('password')
+                        <div class="alert alert-danger" >
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @enderror
 					<div class="input-group mb-5">
 						<input type="password" placeholder="Confirm Password" class="form-control" name="password_confirmation" required>
 						<img src="{{ asset('assets/admin/images/password-svgrepo-com.svg') }}" alt="" class="input-group-text">
