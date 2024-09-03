@@ -4,7 +4,7 @@
     <div class="mx-2">
         <div class="row justify-content-between mb-2 pb-2">
             <h2 class="fw-bold fs-2 col-auto">All Users</h2>
-            <a href="add_user.html" class="btn btn-link  link-dark fw-semibold col-auto me-3">➕Add new user</a>
+            <a href="{{ route('user.create') }}" class="btn btn-link  link-dark fw-semibold col-auto me-3">➕Add new user</a>
         </div>
         <div class="table-responsive">
             <table class="table table-hover display" id="_table">
@@ -36,4 +36,4 @@
     </div>
 </div>
 @endsection
-    
+

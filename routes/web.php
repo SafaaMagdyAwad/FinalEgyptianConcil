@@ -12,13 +12,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index',[PublicController::class,'index'])->name('index');
-Route::get('testimonials',[PublicController::class,'testimonials'])->name('testimonials');
-Route::get('topics-listing',[PublicController::class,'topicsListing'])->name('topicsListing');
-Route::get('topics-detail/{id}',[PublicController::class,'topicsDetail'])->name('topicsDetail');
-Route::get('contact',[PublicController::class,'contact'])->name('contact');
-Route::post('contact',[PublicController::class,'sendContactMessage'])->name('sendContactMessage');
-Route::post('search',[PublicController::class,'search'])->name('search');
+
+Route::controller(PublicController::class)->group(function () {
+    Route::get('index','index')->name('index');
+    Route::get('testimonials','testimonials')->name('testimonials');
+    Route::get('topics-listing','topicsListing')->name('topicsListing');
+    Route::get('topics-detail/{id}','topicsDetail')->name('topicsDetail');
+    Route::get('contact','contact')->name('contact');
+    Route::post('contact','sendContactMessage')->name('sendContactMessage');
+    Route::post('search','search')->name('search'); //searc by category to get topics
+    Route::put('readTopic/{id}','readTopic')->name('readTopic');
+});
 
 
 

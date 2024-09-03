@@ -15,12 +15,8 @@ class PublicController extends Controller
     public function index(){
         $topics=Topic::with('category')->where('published',1)->take(2)->latest()->get();
         $categories = Category::with(['topics' => function ($query) {
-            $query->where('published', 1)
-                  ->latest()
-                  ->take(3);
-        }])
-        ->take(5)
-        ->get();
+            $query->where('published', 1)->latest()->take(3);
+        }])->take(5)->get();
         $testimonials=Testimonial::where('published',1)->get();
         return view('public.index',compact('topics','categories','testimonials'));
     }
@@ -34,10 +30,12 @@ class PublicController extends Controller
         // dd($trending);
         return view('public.topics-listing',compact('popular','trending'));
     }
-    public function topicsDetail(String $id){
-        $topic=Topic::with('category')->findOrFail($id);
-        return view('public.topics-detail',compact('topic'));
+    public function topicsDetail(String $id)
+    {
+        $topic = Topic::with('category')->where('published', 1)->findOrFail($id);
+        return view('public.topics-detail', compact('topic'));
     }
+
     public function contact(){
         return view('public.contact');
     }
@@ -51,18 +49,30 @@ class PublicController extends Controller
         $data['isread']=0;
         //store in Db
         Message::create($data);
-        //send email in job 
-        // php artisan queue:work      
+        //send email in job
+        // php artisan queue:work
         MessageMailJob::dispatch($data);
-        return redirect()->route('index');
+        return redirect()->back();
     }
-    public function search(Request $request){
-        // keyword
-        $topics = Topic::whereHas('category', function ($query) use ($request) {
-            $query->where('category', $request->keyword);
-        })->get(); 
-        dd($topics);
-        //return view('public.topics',compact('topics'));
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+        // Search for topics based on the category name
+        $topics = Topic::whereHas('category', function ($query) use ($keyword) {
+            $query->where('category', 'LIKE', '%' . $keyword . '%');
+        })->take(2)->get();
+        $category=$topics[0]->category->category;
+        // Return the view with the topics data
+        return view('public.search-results', compact('topics','category'));
+    }
+
+    public function readTopic(string $id){
+
+        $topic = Topic::where('published', 1)->findOrFail($id);
+        $topic->update([
+            'views'=> $topic->views+1,
+        ]);
+        return redirect()->back();
     }
 
 

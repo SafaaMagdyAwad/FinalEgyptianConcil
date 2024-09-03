@@ -16,7 +16,12 @@
                 <div class="d-flex align-items-center mt-5">
                     <a href="{{ route('topicsDetail',$topic) }}" class="btn custom-btn custom-border-btn smoothscroll me-4">Read More</a>
 
-                    <a href="#top" class="custom-icon bi-bookmark smoothscroll"></a>
+                    <form method="POST" action="{{ route('readTopic',$topic) }}">
+                        @csrf
+                        @method('put')
+                        <button style="background-color: transparent; border: none; color: inherit;" type="submit" class="custom-icon bi-bookmark smoothscroll">
+                        </button>
+                    </form>
                 </div>
             </div>
 
