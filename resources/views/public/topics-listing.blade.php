@@ -8,7 +8,7 @@
 Topics Listing
 @endpush
 @include('public.includes.header'){{-- done --}}
-@include('public.includes.popularTopics')
+@include('public.includes.popularTopics'){{-- pagination link dosent look good --}}
 @include('public.includes.trinding_topics')
 @endsection
 

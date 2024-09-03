@@ -29,10 +29,10 @@ class PublicController extends Controller
         return view('public.testimonials',compact('testimonials'));
     }
     public function topicslisting(){
-        $popular=Topic::with('category')->whrere('published',1)->orderBy('views', 'desc')->paginate(10);//paginate
-        $trending=Topic::with('category')->whrere('published',1)->whrere('trending',1)->get();
-        $topics=['popular'=>$popular,'trending'=>$trending];
-        return view('public.topics-listing',compact('topics'));
+        $popular=Topic::with('category')->where('published',1)->orderBy('views', 'desc')->paginate(3);
+        $trending=Topic::with('category')->where('published',1)->where('trending',1)->latest()->take(2)->get();
+        // dd($trending);
+        return view('public.topics-listing',compact('popular','trending'));
     }
     public function topicsDetail(String $id){
         $topic=Topic::with('category')->findOrFail($id);
