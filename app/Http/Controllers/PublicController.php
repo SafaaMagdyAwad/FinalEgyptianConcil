@@ -62,7 +62,6 @@ class PublicController extends Controller
             $query->where('category', 'LIKE', '%' . $keyword . '%');
         })->take(2)->get();
         $category=$topics[0]->category->category;
-        // Return the view with the topics data
         return view('public.search-results', compact('topics','category'));
     }
 

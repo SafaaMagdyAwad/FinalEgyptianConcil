@@ -10,6 +10,6 @@
     @include('public.includes.topics'){{-- categories, topics --}}
     @include('public.includes.how_it_works'){{-- static section --}}
     @include('public.includes.FAQs'){{-- static --}}
-    @include('public.includes.testimonials'){{-- images dont come up --}}
+    @include('public.includes.testimonials'){{-- done --}}
     @include('public.includes.indexContact'){{-- static Data --}}
 @endsection

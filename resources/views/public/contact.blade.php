@@ -7,6 +7,6 @@
 @push('page')
     Contact Form
 @endpush
-@include('public.includes.header')
-@include('public.includes.contact')
+@include('public.includes.header'){{-- done --}}
+@include('public.includes.contact'){{-- done --}}
 @endsection

@@ -20,12 +20,9 @@ class DatabaseSeeder extends Seeder
         Category::factory(10)->create();
         Message::factory(10)->create();
         User::factory(10)->create();
-        Topic::factory(10)->create();
+        Topic::factory(30)->create();
         Testimonial::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+       
     }
 }

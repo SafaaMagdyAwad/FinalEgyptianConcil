@@ -8,12 +8,12 @@
         </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach ($testimonials as $testimonial)    
+                @foreach ($testimonials as $testimonial)
                 <div class="carousel-item {{ $loop->first?"active":"" }}">
                     <div class="row mx-md-5">
                         <div class="col-md-4 testimonials">
                             <img class="d-block rounded-3"
-                                src="{{ asset('assets/admin/images/testimonials/',$testimonial->image) }}"
+                                src="{{ asset('assets/admin/images/testimonials/'.$testimonial->image) }}"
                                 alt="First slide">
                         </div>
                         <div class="col-md-8 px-md-5 d-flex flex-column justify-content-center">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach 
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
