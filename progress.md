@@ -4,17 +4,17 @@
 
 
     ** it was fun to change the design of login $register and as well changing the code. 
-
+## public section
     ** i used job to send emails
 
     ** i tried to keeb on the same design of the frontend and didnt care of the large code , it was fun to see that the site was looking good.
 
     ** i added a static map instead of the old one
-    search was brogrammed , i created a new blade to display the search results
+
+    **search was programmed , i created a new blade to display the search results
 
     ** active classe active('route') was created and added to the navbar to make the site more dinamic and realistic  used in public Navbar
 
-    ** now , i will think of something to do with newsletter & multi lang the site
 
 ## error messages in login , register dont appear
         solved they appear now
@@ -26,6 +26,7 @@
             and redirected to /  after registration
             After login user will be redirected to /admin/topic
             الحمد لله
-            
 
+## future planes
 
+    ** now , i will think of something to do with newsletter & multi lang the site
