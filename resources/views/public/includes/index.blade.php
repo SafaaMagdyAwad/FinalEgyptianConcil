@@ -9,16 +9,17 @@
                     <a href="{{ route('topicsDetail',$topic) }}">
                         <div class="d-flex">
                             <div>
-                                <h5 class="mb-2">{{ $topic['title']  }}</h5>
+                                <h5 class="mb-2">{{ $topic->title  }}</h5>
 
-                                <p class="mb-0">{{ Str::limit($topic['content'], 30, '...')  }}</p>
+                                <p class="mb-0">{{ Str::limit($topic->content , 30, '...')  }}</p>
                             </div>
 
-                            <span class="badge bg-design rounded-pill ms-auto">{{ $topic['views']  }}</span>
+                            <span class="badge bg-design rounded-pill ms-auto">{{ $topic->views  }}</span>
                         </div>
+                        @if ($topic->image)
+                            <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" class="custom-block-image img-fluid" alt="{{ $topic->title }}">
+                        @endif
 
-                        <img src="{{ asset('assets/admin/images/topics/'.$topic['image']) }}"
-                            class="custom-block-image img-fluid" alt="{{ $topic['title'] }}">
                     </a>
                 </div>
             </div>
@@ -27,8 +28,9 @@
             <div class="col-lg-6 col-12">
                 <div class="custom-block custom-block-overlay">
                     <div class="d-flex flex-column h-100">
-                        <img src="{{ asset('assets/admin/images/topics/'.$topic['image']) }}"
-                            class="custom-block-image img-fluid" alt="{{ $topic['title'] }}">
+                        @if ($topic['image'])
+                        <img src="{{ asset('assets/admin/images/topics/'.$topic['image']) }}" class="custom-block-image img-fluid" alt="{{ $topic['title'] }}">
+                        @endif
 
                         <div class="custom-block-overlay-text d-flex">
                             <div>

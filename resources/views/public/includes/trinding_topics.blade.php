@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-12">
                 <h3 class="mb-4">Trending Topics</h3>
             </div>
-            @foreach ($trending as $item)   
+            @foreach ($trending as $item)
             <div class="col-lg-6 col-md-6 col-12 mt-3 mb-4 mb-lg-0">
                 <div class="custom-block bg-white shadow-lg">
                     <a href="{{ route('topicsDetail',$item) }}">
@@ -18,8 +18,9 @@
 
                             <span class="badge bg-finance rounded-pill ms-auto">{{ $item['views'] }}</span>
                         </div>
-
-                        <img src="{{ asset('assets/admin/images/topics/'.$item['image']) }}" class="custom-block-image img-fluid" alt="{{ $item['title'] }}">
+                        @if ($item['image'])
+                            <img src="{{ asset('assets/admin/images/topics/'.$item['image']) }}" class="custom-block-image img-fluid" alt="{{ $item['title'] }}">
+                        @endif
                     </a>
                 </div>
             </div>

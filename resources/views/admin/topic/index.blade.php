@@ -32,7 +32,11 @@
                             <td>{{ $topic->views }}</td>
                             <td>{{ $topic->published?"YES":"NO" }}</td>
                             <td>{{ $topic->trending?"YES":"NO" }}</td>
-                            <td class="text-center"><a class="text-decoration-none text-dark" href="{{ route('topic.edit',$topic) }}"><img src="{{ asset('assets/admin/images/edit-svgrepo-com.svg') }}"></a></td>
+                            <td class="text-center">
+                                <a class="text-decoration-none text-dark" href="{{ route('topic.edit',$topic) }}">
+                                    <img src="{{ asset('assets/admin/images/edit-svgrepo-com.svg') }}">
+                                </a>
+                            </td>
                             <td>
                                 <form method="POST" action="{{ route('topic.destroy',$topic) }}">
                                     @csrf

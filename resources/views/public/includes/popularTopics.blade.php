@@ -6,11 +6,13 @@
             <div class="col-lg-12 col-12 text-center">
                 <h3 class="mb-4">Popular Topics</h3>
             </div>
-            @foreach ($popular as $item)         
+            @foreach ($popular as $item)
             <div class="col-lg-8 col-12 mt-3 mx-auto">
                 <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
                     <div class="d-flex">
-                        <img src="{{ asset('assets/admin/images/topics/'.$item->image) }}" class="custom-block-image img-fluid" alt="">
+                        @if ($item->image)
+                            <img src="{{ asset('assets/admin/images/topics/'.$item->image) }}" class="custom-block-image img-fluid" alt="">
+                        @endif
 
                         <div class="custom-block-topics-listing-info d-flex">
                             <div>

@@ -47,9 +47,10 @@
 
                                                     <span class="badge bg-design rounded-pill ms-auto">{{ $topic->views }}</span>
                                                 </div>
+                                                @if ($topic->image)
+                                                    <img src="{{ asset('assets/admin/images/topics/'. $topic->image) }}"  class="custom-block-image img-fluid" alt="{{ $topic->title }}">
+                                                @endif
 
-                                                <img src="{{ asset('assets/admin/images/topics/'. $topic->image) }}"
-                                                    class="custom-block-image img-fluid" alt="{{ $topic->title }}">
                                             </a>
                                         </div>
                                     </div>
@@ -69,9 +70,10 @@
 
                                                         <span class="badge bg-finance rounded-pill ms-auto">{{ $topic->views }}</span>
                                                     </div>
+                                                    @if ($topic->image)
+                                                    <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" class="custom-block-image img-fluid" alt="{{ $topic->title }}">
+                                                    @endif
 
-                                                    <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}"
-                                                        class="custom-block-image img-fluid" alt="{{ $topic->title }}">
                                                 </a>
                                             </div>
                                         </div>

@@ -44,9 +44,9 @@
 
                                             <span class="badge bg-design rounded-pill ms-auto">{{ $topic->views }}</span>
                                         </div>
-
-                                        <img src="{{ asset('assets/admin/images/topics/'. $topic->image) }}"
-                                            class="custom-block-image img-fluid" alt="{{ $topic->title }}">
+                                        @if ($topic->image)
+                                        <img src="{{ asset('assets/admin/images/topics/'. $topic->image) }}" class="custom-block-image img-fluid" alt="{{ $topic->title }}">
+                                        @endif
                                     </a>
                                 </div>
                             </div>

@@ -1,7 +1,4 @@
-
-
 ## important steps
-
 
     ** it was fun to change the design of login $register and as well changing the code. 
 ## public section

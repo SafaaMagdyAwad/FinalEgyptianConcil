@@ -19,28 +19,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($testimonials as $testimonial)    
+                    @foreach ($testimonials as $testimonial)
                     <tr>
                         <th scope="row">{{ $testimonial->created_at->format(' d F Y') }}</th>
                         <td>{{ $testimonial->name }}</td>
                         <td>{{ Str::limit($testimonial->content, 30), '...' }}</td>
                         <td>{{ $testimonial->published?"YES":"NO" }}</td>
-                        <td class="text-center"><a class="text-decoration-none text-dark" href="{{ route('testimonial.edit',$testimonial) }}"><img src="{{ asset('assets/admin/images/edit-svgrepo-com.svg') }}"></a></td>
+                        <td class="text-center">
+                            <a class="text-decoration-none text-dark" href="{{ route('testimonial.edit',$testimonial) }}">
+                                <img src="{{ asset('assets/admin/images/edit-svgrepo-com.svg') }}">
+                            </a>
+                        </td>
                         <td class="text-center">
                             <form action="{{ route('testimonial.destroy',$testimonial) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" style="background-color: transparent; border: none; color: inherit;" onclick = "return confirm('Are you sure you want to delete this item?')"><img src="{{ asset('assets/admin/images/trash-can-svgrepo-com.svg') }}"></button>
+                                <button type="submit" style="background-color: transparent; border: none; color: inherit;" onclick = "return confirm('Are you sure you want to delete this item?')">
+                                    <img src="{{ asset('assets/admin/images/trash-can-svgrepo-com.svg') }}">
+                                </button>
                             </form>
                         </td>
                     </tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 @endsection
-    
-   
+

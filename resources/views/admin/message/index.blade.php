@@ -81,7 +81,9 @@
                             <form action="{{ route('message.destroy',$message) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" style="background-color: transparent; border: none; color: inherit;" onclick = "return confirm('Are you sure you want to delete this item?')"><img src="{{ asset('assets/admin/images/trash-can-svgrepo-com.svg') }}"></button>
+                                <button type="submit" style="background-color: transparent; border: none; color: inherit;" onclick = "return confirm('Are you sure you want to delete this item?')">
+                                    <img src="{{ asset('assets/admin/images/trash-can-svgrepo-com.svg') }}">
+                                </button>
                             </form>
                         </td>
                     </tr>

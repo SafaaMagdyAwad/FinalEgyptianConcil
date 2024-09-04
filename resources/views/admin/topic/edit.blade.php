@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 @section('content')
-  
+
   <div class="container my-5">
     <div class="mx-2">
       <h2 class="fw-bold fs-2 mb-5 pb-2">Edit Topic</h2>
@@ -65,7 +65,9 @@
           <div class="col-md-10">
             <input type="hidden" name="old_image" value="{{ $topic->image }}" />
             <input type="file" class="form-control" style="padding: 0.7rem; margin-bottom: 10px;" name="image" />
-            <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" alt="{{ $topic->title }}" style="width: 10rem;">
+            @if ($topic->image)
+                <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" alt="{{ $topic->title }}" style="width: 10rem;">
+            @endif
           </div>
         </div>
         <div class="text-md-end">

@@ -26,7 +26,11 @@
                             <td>{{ $user->user_name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->is_active?"YES":"NO" }}</td>
-                            <td class="text-center"><a class="text-decoration-none text-dark" href="{{ route('user.edit',$user) }}"><img src="{{ asset('assets/admin/images/edit-svgrepo-com.svg') }}"></a></td>
+                            <td class="text-center">
+                                <a class="text-decoration-none text-dark" href="{{ route('user.edit',$user) }}">
+                                    <img src="{{ asset('assets/admin/images/edit-svgrepo-com.svg') }}">
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
 
