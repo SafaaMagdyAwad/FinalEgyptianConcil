@@ -8,18 +8,15 @@
         @csrf
         @method('put')
         <div class="form-group mb-3 row">
-            @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Topic Title:</label>
           <div class="col-md-10">
             <input type="text" placeholder="e.g. Design Patterns" class="form-control py-2" name="title" value="{{ old('title',$topic->title) }}"/>
           </div>
         </div>
+        @error('title')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="form-group mb-3 row">
-            @error('category_id')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Category:</label>
           <div class="col-md-10">
             <select name="category_id" id="" class="form-control py-1">
@@ -29,47 +26,51 @@
             </select>
           </div>
         </div>
+        @error('category_id')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="form-group mb-3 row">
-            @error('content')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Content:</label>
           <div class="col-md-10">
             <textarea name="content" id="" rows="5" class="form-control">{{ $topic->content }}</textarea>
           </div>
         </div>
+        @error('content')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="form-group mb-3 row">
-            @error('trending')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Trending:</label>
           <div class="col-md-10">
             <input type="checkbox" class="form-check-input" style="padding: 0.7rem;" name="trending" @checked(old('trending',$topic->trending)) />
           </div>
         </div>
+        @error('trending')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="form-group mb-3 row">
-            @error('published')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Published:</label>
           <div class="col-md-10">
             <input type="checkbox" class="form-check-input" style="padding: 0.7rem;"  name="published" @checked(old('published',$topic->published))/>
           </div>
         </div>
+        @error('published')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <hr>
         <div class="form-group mb-3 row">
-            @error('image')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Image:</label>
           <div class="col-md-10">
             <input type="hidden" name="old_image" value="{{ $topic->image }}" />
             <input type="file" class="form-control" style="padding: 0.7rem; margin-bottom: 10px;" name="image" />
             @if ($topic->image)
-                <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" alt="{{ $topic->title }}" style="width: 10rem;">
+            <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" alt="{{ $topic->title }}" style="width: 10rem;">
             @endif
           </div>
         </div>
+        @error('image')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="text-md-end">
           <button class="btn mt-4 btn-secondary text-white fs-5 fw-bold border-0 py-2 px-md-5">
             Edit Topic

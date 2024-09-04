@@ -18,9 +18,9 @@ class TestimonialFactory extends Factory
     {
         return [
             'name'=>fake()->name(),
-            'content'=>fake()->text(),
+            'content'=>fake()->text(300),
             'published'=>fake()->boolean(),
-            'image'=>basename(fake()->image(public_path('assets/admin/images/testimonials'))),
+            'image'=>fake()->randomElement(['testimonial1.jpg','testimonial2.jpg','testimonial3.jpg']),
         ];
     }
 }

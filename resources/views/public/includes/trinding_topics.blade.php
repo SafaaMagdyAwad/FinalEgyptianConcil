@@ -19,7 +19,9 @@
                             <span class="badge bg-finance rounded-pill ms-auto">{{ $item['views'] }}</span>
                         </div>
                         @if ($item['image'])
-                            <img src="{{ asset('assets/admin/images/topics/'.$item['image']) }}" class="custom-block-image img-fluid" alt="{{ $item['title'] }}">
+                        <img src="{{ asset('assets/admin/images/topics/'.$item['image']) }}" class="custom-block-image img-fluid" alt="{{ $item['title'] }}">
+                        @else
+                        <img src="https://www.ifioque.com/assets/img/core/Diplo-Topic.webp" class="custom-block-image img-fluid" alt="{{ $item['title'] }}">
                         @endif
                     </a>
                 </div>

@@ -12,6 +12,8 @@
                     <div class="d-flex">
                         @if ($item->image)
                             <img src="{{ asset('assets/admin/images/topics/'.$item->image) }}" class="custom-block-image img-fluid" alt="">
+                        @else
+                            <img src="https://www.ifioque.com/assets/img/core/Diplo-Topic.webp" class="custom-block-image img-fluid" alt="">
                         @endif
 
                         <div class="custom-block-topics-listing-info d-flex">

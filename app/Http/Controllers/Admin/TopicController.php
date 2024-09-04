@@ -74,6 +74,7 @@ class TopicController extends Controller
      */
     public function update(Request $request, Topic $topic)
     {
+        // dd($request->all());
         $data = $request->validate([
             'title' => 'required|string',
             'content' => 'required|string',

@@ -14,6 +14,8 @@
                         <div class="col-md-4 testimonials">
                             @if ($testimonial->image)
                             <img class="d-block rounded-3" src="{{ asset('assets/admin/images/testimonials/'.$testimonial->image) }}" alt="First slide">
+                            @else
+                            <img class="d-block rounded-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0mzqEBWV8H1ygEUlr82QV0yOrWtd3HIquKQ&s" alt="First slide">
                             @endif
                         </div>
                         <div class="col-md-8 px-md-5 d-flex flex-column justify-content-center">

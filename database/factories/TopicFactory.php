@@ -16,14 +16,16 @@ class TopicFactory extends Factory
      */
     public function definition(): array
     {
+        $images=['topic1.png','topic2.png','topic3.png','topic4.png','topic5.png','topic6.png','topic7.png','topic8.png','topic9.png','topic10.png','topic11.png','topic12.png'];
+        $topics=['Podcast','Advertising','Web Design','Finance','Project Management'];
         return [
-            'title'=>fake()->title(),
-            'content'=>fake()->text(),
+            'title'=>fake()->randomElement($topics),
+            'content'=>fake()->text(3000),
             'views'=>fake()->numberBetween(0,10),
             'published'=>fake()->boolean(),
             'trending'=>fake()->boolean(),
-            'image'=>basename(fake()->image(public_path('assets/admin/images/topics'))),
-            'category_id'=>fake()->numberBetween(1,10),
+            'image'=>fake()->randomElement($images),
+            'category_id'=>fake()->numberBetween(1,5),
         ];
     }
 }

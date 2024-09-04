@@ -8,12 +8,19 @@
         </div>
         <div class="p-5">
             <div class="container-fluid g-0 pt-3 pb-5 px-lg-5 px-md-3 px-1">
-                <div
+
                 @if ($topic->image)
-                  class="img-wrapper"
-                >
+                <div class="img-wrapper" >
                     <img
                     src="{{ asset('assets/admin/images/topics/'.$topic->image) }}"
+                    class="rounded image-center border-5 rounded-4"
+                    alt="DEI-header-img"
+                    />
+                </div>
+                @else
+                <div class="img-wrapper" >
+                    <img
+                    src="https://www.ifioque.com/assets/img/core/Diplo-Topic.webp"
                     class="rounded image-center border-5 rounded-4"
                     alt="DEI-header-img"
                     />

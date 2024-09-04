@@ -18,6 +18,8 @@
                         </div>
                         @if ($topic->image)
                             <img src="{{ asset('assets/admin/images/topics/'.$topic->image) }}" class="custom-block-image img-fluid" alt="{{ $topic->title }}">
+                        @else
+                            <img src="https://www.ifioque.com/assets/img/core/Diplo-Topic.webp" class="custom-block-image img-fluid" alt="{{ $topic->title }}">
                         @endif
 
                     </a>
@@ -30,6 +32,8 @@
                     <div class="d-flex flex-column h-100">
                         @if ($topic['image'])
                         <img src="{{ asset('assets/admin/images/topics/'.$topic['image']) }}" class="custom-block-image img-fluid" alt="{{ $topic['title'] }}">
+                        @else
+                        <img src="https://www.ifioque.com/assets/img/core/Diplo-Topic.webp" class="custom-block-image img-fluid" alt="{{ $topic['title'] }}">
                         @endif
 
                         <div class="custom-block-overlay-text d-flex">

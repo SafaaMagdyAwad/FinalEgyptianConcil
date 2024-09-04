@@ -61,7 +61,7 @@ class PublicController extends Controller
         $topics = Topic::whereHas('category', function ($query) use ($keyword) {
             $query->where('category', 'LIKE', '%' . $keyword . '%');
         })->take(2)->get();
-        $category=$topics[0]->category->category;
+        $category=$keyword;
         return view('public.search-results', compact('topics','category'));
     }
 

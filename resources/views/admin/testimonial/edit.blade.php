@@ -40,11 +40,11 @@
         @enderror
         <label for="" class="form-label col-md-2 fw-bold text-md-end">Image:</label>
         <div class="col-md-10">
-          <input type="file" class="form-control" style="padding: 0.7rem; margin-bottom: 10px;" name="image" />
-          <input type="hidden" name="old_image" value="{{ $testimonial->image }}" />
-          @if ($testimonial->image)
-          <img src="{{ asset('assets/admin/images/testimonials/'.$testimonial->image) }}" alt="" style="width: 10rem;">
-          @endif
+        <input type="file" class="form-control" style="padding: 0.7rem; margin-bottom: 10px;" name="image" />
+        <input type="hidden" name="old_image" value="{{ $testimonial->image }}" />
+        @if ($testimonial->image)
+        <img src="{{ asset('assets/admin/images/testimonials/'.$testimonial->image) }}" alt="" style="width: 10rem;">
+        @endif
         </div>
       </div>
       <div class="text-md-end">
