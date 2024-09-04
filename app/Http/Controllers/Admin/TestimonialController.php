@@ -63,8 +63,10 @@ class TestimonialController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'old_image' => 'required|string',
         ]);
-        $data['published']=isset($request->published);
+        $data['published']=$request->published;
         $data['image']=(isset($request->image))?$this->upload_file($request->image,'assets/admin/images/testimonials'):$request->old_image;
+        // dd($data);
+        $testimonial->update($data);
         return redirect()->route('testimonial.index');
     }
 

@@ -52,7 +52,9 @@
         <div class="form-group mb-3 row">
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Active:</label>
           <div class="col-md-10">
-            <input type="checkbox" class="form-check-input" style="padding: 0.7rem;" name="is_active" @checked( old('is_active',$user->is_active) ) />
+
+            <input type="hidden"  name="is_active" value="0" />
+            <input type="checkbox" class="form-check-input" value="1" style="padding: 0.7rem;" name="is_active" @checked( old('is_active',$user->is_active) ) />
           </div>
         </div>
         <div class="text-md-end">

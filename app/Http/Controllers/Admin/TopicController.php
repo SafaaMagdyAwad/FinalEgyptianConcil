@@ -82,9 +82,10 @@ class TopicController extends Controller
             'category_id' => 'required|integer|exists:categories,id',
             'old_image' => 'required|string',
         ]);
-        $data['published']=isset($request->published);
-        $data['trending']=isset($request->trending);
+        $data['published']=$request->published;
+        $data['trending']=$request->trending;
         $data['image']=(isset($request->image)) ? $this->upload_file($request->image,'assets/admin/images/topics'):$request->old_image;
+        // dd($data);
         $topic->update($data);
         return redirect()->route('topic.index');
     }

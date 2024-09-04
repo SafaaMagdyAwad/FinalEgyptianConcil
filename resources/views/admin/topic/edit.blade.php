@@ -41,7 +41,8 @@
         <div class="form-group mb-3 row">
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Trending:</label>
           <div class="col-md-10">
-            <input type="checkbox" class="form-check-input" style="padding: 0.7rem;" name="trending" @checked(old('trending',$topic->trending)) />
+            <input type="hidden" name="trending" class="form-check-input" style="padding: 0.7rem;"  value="0"   />
+            <input type="checkbox" class="form-check-input" style="padding: 0.7rem;" name="trending" value="1" @checked(old('trending',$topic->trending)) />
           </div>
         </div>
         @error('trending')
@@ -50,7 +51,8 @@
         <div class="form-group mb-3 row">
           <label for="" class="form-label col-md-2 fw-bold text-md-end">Published:</label>
           <div class="col-md-10">
-            <input type="checkbox" class="form-check-input" style="padding: 0.7rem;"  name="published" @checked(old('published',$topic->published))/>
+            <input type="hidden" name="published" class="form-check-input" style="padding: 0.7rem;"  value="0"   />
+            <input type="checkbox" class="form-check-input" style="padding: 0.7rem;"  name="published" value="1" @checked(old('published',$topic->published))/>
           </div>
         </div>
         @error('published')

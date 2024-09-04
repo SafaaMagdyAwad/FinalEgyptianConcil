@@ -20,7 +20,7 @@ class MessageFactory extends Factory
             'name'=>fake()->name(),
             'email'=>fake()->email(),
             'subject'=>fake()->word(),
-            'message'=>fake()->text(200),
+            'message'=>fake()->text(600),
             'isread'=>fake()->boolean(),
         ];
     }

@@ -32,6 +32,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // this user will be active and vertified
         $data=$request->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -67,7 +68,7 @@ class UserController extends Controller
             'email' => 'required|string|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:8',
         ]);
-        $data['is_active'] = isset($request->is_active);
+        $data['is_active'] = $request->is_active;
         $data['password'] =isset($request->password)? Hash::make($request->password):$user->password;
         // dd($data);
         $user->update($data);

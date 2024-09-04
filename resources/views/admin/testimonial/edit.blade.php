@@ -25,19 +25,17 @@
         </div>
       </div>
       <div class="form-group mb-3 row">
-        @error('published')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
         <label for="" class="form-label col-md-2 fw-bold text-md-end">Published:</label>
         <div class="col-md-10">
-          <input type="checkbox" class="form-check-input" style="padding: 0.7rem;" name="published" @checked(old('published',$testimonial->published)) />
+        <input type="hidden" name="published" class="form-check-input" style="padding: 0.7rem;"  value="0"   />
+        <input type="checkbox" class="form-check-input" style="padding: 0.7rem;" name="published"  value="1"  @checked(old('published',$testimonial->published)) />
         </div>
       </div>
+        @error('published')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
       <hr>
       <div class="form-group mb-3 row">
-        @error('image')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
         <label for="" class="form-label col-md-2 fw-bold text-md-end">Image:</label>
         <div class="col-md-10">
         <input type="file" class="form-control" style="padding: 0.7rem; margin-bottom: 10px;" name="image" />
@@ -47,6 +45,9 @@
         @endif
         </div>
       </div>
+        @error('image')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
       <div class="text-md-end">
         <button class="btn mt-4 btn-secondary text-white fs-5 fw-bold border-0 py-2 px-md-5">
           Edit Testimonial
