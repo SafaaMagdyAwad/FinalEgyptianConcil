@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
         Category::factory(5)->create();
         Message::factory(10)->create();
         User::factory(10)->create();
-        Topic::factory(30)->create();
+        Topic::factory(20)->create();
         Testimonial::factory(10)->create();
 
-       
+
     }
 }
