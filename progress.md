@@ -26,9 +26,6 @@
             and redirected to /  after registration
             After login user will be redirected to /admin/topic
 
-## future planes
-    ** now , i will think of something to do with newsletter & multi lang the site
-
 ## using factory makes som images null 
     'image'=>basename(fake()->image(public_path('assets/admin/images/topics'))),
     solved there is no null images now

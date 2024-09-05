@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link {{ active('user.index') }} {{ active('user.create') }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               USERS
             </a>
@@ -20,7 +20,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link {{ active('topic.index') }} {{ active('topic.create') }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               TOPICS
             </a>
@@ -33,7 +33,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link {{ active('category.index') }} {{ active('category.create') }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               CATEGORIES
             </a>
@@ -46,7 +46,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link {{ active('testimonial.index') }} {{ active('testimonial.create') }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               TESTIMONIALS
             </a>
@@ -58,7 +58,7 @@
               <li><a class="dropdown-item" href="{{ route('testimonial.index') }}">All testimonials</a></li>
             </ul>
           </li>
-          <li><a class="nav-item nav-link" href="{{ route('message.index') }}">MESSAGES</a></li>
+          <li><a class="nav-item {{ active('message.index') }} nav-link" href="{{ route('message.index') }}">MESSAGES</a></li>
         </ul>
       </div>
     </div>
