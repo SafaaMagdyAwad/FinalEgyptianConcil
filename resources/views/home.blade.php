@@ -14,8 +14,10 @@
                         </div>
                     @endif
 
+
                     {{ Auth::user()->first_name }}
                     {{ __('You are logged in!') }}
+                    <a class="btn btn-success" href="{{ route('topic.index') }}">Go To Admin Dashboard</a>
                 </div>
             </div>
         </div>

@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="text-md-end">
-          <button class="btn mt-4 btn-secondary text-white fs-5 fw-bold border-0 py-2 px-md-5">
+          <button type="submit" class="btn mt-4 btn-secondary text-white fs-5 fw-bold border-0 py-2 px-md-5">
             Add Topic
           </button>
         </div>
