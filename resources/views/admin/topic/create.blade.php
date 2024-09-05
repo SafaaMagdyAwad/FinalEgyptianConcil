@@ -23,7 +23,7 @@
             <select name="category_id" id="" class="form-control py-1">
               <option value="" disabled>Select category</option>
               @foreach ($categories as $category)
-                  <option value="{{ $category->id }}" @selected(old('category_id'))>{{ $category->category }}</option>
+                  <option value="{{ $category->id }}" @selected(old('category_id' )==$category->id)>{{ $category->category }}</option>
               @endforeach
             </select>
           </div>
