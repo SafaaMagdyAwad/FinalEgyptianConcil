@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Jobs\ConfirmMailJob;
 use App\Jobs\MessageMailJob;
 use App\Jobs\NewsLetterJob;
+use App\Mail\ConfirmMail;
 use App\Models\Category;
 use App\Models\Message;
 use App\Models\Subscripe;
 use App\Models\Testimonial;
 use App\Models\Topic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class PublicController extends Controller
 {
@@ -81,7 +84,6 @@ class PublicController extends Controller
         ]);
         $data['active']=1;
         Subscripe::create($data);
-        ConfirmMailJob::dispatch($data);
         return redirect()->back();
     }
 //creating command to send emails for active subscripers
