@@ -22,6 +22,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::post('contact','sendContactMessage')->name('sendContactMessage');
     Route::post('search','search')->name('search'); //searc by category to get topics
     Route::put('readTopic/{id}','readTopic')->name('readTopic');
+    Route::post('newsletter','newsletter')->name('newsletter');
 });
 
 

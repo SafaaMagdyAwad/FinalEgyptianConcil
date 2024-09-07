@@ -7,7 +7,7 @@
             </div>
 
             <div class="col-lg-5 col-12 subscribe-form-wrap d-flex justify-content-center align-items-center">
-                <form class="custom-form subscribe-form" action="" method="post" role="form">
+                <form class="custom-form subscribe-form" action="{{ route('newsletter') }}" method="post" role="form">
                     @csrf
                     <h4 class="mb-4 pb-2">Get Newsletter</h4>
 

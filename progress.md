@@ -1,3 +1,9 @@
+## to make project run as well 
+  php artisan migrate:refresh --seed
+  php artisan serve
+  php artisan queue:work
+  
+  php artisan app:news-letter-command
 ## important steps
     it was fun to change the design of login $register and as well changing the code. 
 

@@ -9,4 +9,5 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
-schedule::command('backup:database')->daily();
+Schedule::command('app:backup-database')->daily();
+Schedule::command('app:news-letter-command')->daily();

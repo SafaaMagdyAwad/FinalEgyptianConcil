@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ConfirmMailJob;
 use App\Jobs\MessageMailJob;
 use App\Jobs\NewsLetterJob;
 use App\Models\Category;
 use App\Models\Message;
+use App\Models\Subscripe;
 use App\Models\Testimonial;
 use App\Models\Topic;
 use Illuminate\Http\Request;
@@ -73,6 +75,16 @@ class PublicController extends Controller
         ]);
         return redirect()->back();
     }
+    public function newsletter(Request $request){
+        $data=$request->validate([
+            'email'=>'required|email',
+        ]);
+        $data['active']=1;
+        Subscripe::create($data);
+        ConfirmMailJob::dispatch($data);
+        return redirect()->back();
+    }
+//creating command to send emails for active subscripers
 
 
 }
