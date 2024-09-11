@@ -19,7 +19,20 @@
             @stack('Links')
 
             <div class="d-none d-lg-block">
-                <a href="{{ route('register')  }}" class="navbar-icon bi-person smoothscroll"></a>
+                @if (Route::has('login'))
+                <nav class="-mx-3 flex flex-1 justify-end">
+                    @auth
+                        <a
+                        href="{{ route('topic.index') }}"
+                        class="navbar-icon bi-person smoothscroll"
+                        ></a>
+                    @else
+                        <a href="{{ route('register')  }}" class="navbar-icon bi-person smoothscroll"></a>
+                    @endauth
+
+
+                </nav>
+                @endif
             </div>
         </div>
     </div>
