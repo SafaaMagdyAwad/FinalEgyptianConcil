@@ -10,8 +10,10 @@
                 <form class="custom-form subscribe-form" action="{{ route('newsletter') }}" method="post" role="form">
                     @csrf
                     <h4 class="mb-4 pb-2">Get Newsletter</h4>
-
-                    <input type="email" name="email" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required="">
+                    @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <input type="email" name="email" value="{{old('email')}}" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required="">
 
                     <div class="col-lg-12 col-12">
                         <button type="submit" class="form-control">Subscribe</button>

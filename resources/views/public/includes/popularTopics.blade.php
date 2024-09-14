@@ -35,7 +35,7 @@
             <div class="col-lg-12 col-12">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center mb-0">
-                        {{ $popular->appends(request()->input())->links() }}
+                        {{  $popular->links() }}
                     </ul>
                 </nav>
             </div>
