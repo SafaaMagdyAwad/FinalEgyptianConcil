@@ -20,7 +20,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('topics-detail/{id}','topicsDetail')->name('topicsDetail');
     Route::get('contact','contact')->name('contact');
     Route::post('contact','sendContactMessage')->name('sendContactMessage');
-    Route::post('search','search')->name('search'); //searc by category to get topics
+    Route::post('search','search')->name('search'); //search by category to get topics
     Route::put('readTopic/{id}','readTopic')->name('readTopic');
     Route::post('newsletter','newsletter')->name('newsletter');
 });

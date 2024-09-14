@@ -3,7 +3,8 @@
         <div class="row justify-content-center">
 
             <div class="col-lg-5 col-12">
-                <img src="{{ asset('assets/public/images/rear-view-young-college-student.jpg') }}" class="newsletter-image img-fluid" alt="">
+                <img src="{{ asset('assets/public/images/rear-view-young-college-student.jpg') }}"
+                    class="newsletter-image img-fluid" alt="">
             </div>
 
             <div class="col-lg-5 col-12 subscribe-form-wrap d-flex justify-content-center align-items-center">
@@ -13,7 +14,8 @@
                     @error('email')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    <input type="email" name="email" value="{{old('email')}}" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required="">
+                    <input type="email" name="email" value="{{ old('email') }}" id="subscribe-email"
+                        pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required="">
 
                     <div class="col-lg-12 col-12">
                         <button type="submit" class="form-control">Subscribe</button>
