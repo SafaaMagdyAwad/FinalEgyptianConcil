@@ -16,9 +16,11 @@ class MessageController extends Controller
         return view('admin.message.index',compact('messages'));
     }
     public function read(Message $message){
-        $message->update([
-            'isread'=> 1,
-        ]);
+        if($message->isread==0){
+            $message->update([
+                'isread'=> 1,
+            ]);
+        }
         return view('admin.message.details',compact('message'));
     }
     public function destroy(Message $message){
