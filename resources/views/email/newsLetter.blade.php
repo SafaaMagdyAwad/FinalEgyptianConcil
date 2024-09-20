@@ -19,11 +19,10 @@
             <p>
                 There are many new Topics in our site would you like to come and look.
                 <hr>
-                <a href="{{ route('index') }}">Topics</a>
 
 
             </p>
-            \
+
         </div>
     </div>
 
