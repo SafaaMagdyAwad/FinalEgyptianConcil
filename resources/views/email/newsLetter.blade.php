@@ -19,8 +19,6 @@
             <p>
                 There are many new Topics in our site would you like to come and look.
                 <hr>
-
-
             </p>
 
         </div>
