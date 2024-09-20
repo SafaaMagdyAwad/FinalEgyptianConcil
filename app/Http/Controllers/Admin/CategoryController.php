@@ -54,7 +54,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $data=$request->validate([
-            'category' => 'required|string|unique:categories,category',
+            'category' => 'required|string|unique:categories,category,'. $category->id ,
         ]);
         $category->update($data);
         return redirect()->route('category.index');

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
 
 </head>
+
 <body>
     <div class="container">
         <div class="card">
@@ -21,9 +23,11 @@
 
 
             </p>
-\        </div>
+            \
+        </div>
     </div>
 
-<script src="{{ asset('assets/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
 </body>
+
 </html>
