@@ -37,8 +37,10 @@
                             <div class="row">
                                 @if ($category->topics->count() == 3)
                                     @include('public.includes.threeTopics')
-                                @else
+                                @elseif ($category->topics->count() == 2)
                                     @include('public.includes.twoTopics')
+                                @else
+                                    @include('public.includes.oneTopic')
                                 @endif
                             </div>
                         </div>

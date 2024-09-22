@@ -44,7 +44,7 @@ class PublicController extends Controller
         $data = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
-            'subject' => 'nullable|string',
+            'subject' => 'required|string',
             'message' => 'required|string',
         ]);
         $data['isread']=0;
@@ -53,7 +53,7 @@ class PublicController extends Controller
         //send email in job
         // php artisan queue:work
         MessageMailJob::dispatch($data);
-        return redirect()->back();
+        return redirect()->back()->with('success',"Your Message was sent successfully !");
     }
     public function search(Request $request)
     {

@@ -8,6 +8,7 @@
         Contact Form
     @endpush
     @include('public.includes.header'){{-- done --}}
+    
     @include('public.includes.contact'){{-- done --}}
     @push('links')
         @include('public.includes.pages_footer'){{-- done --}}

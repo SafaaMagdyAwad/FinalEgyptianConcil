@@ -1,5 +1,10 @@
 <section class="section-padding section-bg">
     <div class="container">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="row">
 
             <div class="col-lg-12 col-12">

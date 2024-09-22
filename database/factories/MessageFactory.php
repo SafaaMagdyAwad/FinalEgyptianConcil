@@ -19,7 +19,7 @@ class MessageFactory extends Factory
         $subject = ['Technology', 'Health', 'Business', 'Education', 'Sports'];
         return [
             'name'=>fake()->name(),
-            'email'=>fake()->email(),
+            'email'=>fake()->safeEmail(),
             'subject'=>fake()->randomElement($subject),
             'message'=>fake()->text(600),
             'isread'=>fake()->boolean(),

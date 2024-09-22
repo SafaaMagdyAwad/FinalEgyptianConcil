@@ -2,6 +2,11 @@
 @section('content')
     <div class="container my-5">
         <div class="mx-2">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row justify-content-between mb-2 pb-2">
                 <h2 class="fw-bold fs-2 col-auto">All Topics</h2>
                 <a href="{{ route('topic.create') }}" class="btn btn-link  link-dark fw-semibold col-auto me-3">➕Add new
