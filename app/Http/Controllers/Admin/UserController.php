@@ -70,7 +70,7 @@ class UserController extends Controller
         ]);
         $data['is_active'] = $request->is_active;
         $data['password'] =isset($request->password)? Hash::make($request->password):$user->password;
-        // dd($data);
+        // dd($user->password);
         $user->update($data);
         return redirect()->route('user.index');
     }
